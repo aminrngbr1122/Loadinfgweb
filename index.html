@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<!-- https://github.com/amirngbr1122 -->
+
+       <!-- Follow my Github -->
+
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <meta name="author" content="Amin rngbr 1122">
+    <title>Loading ...</title>
+    <meta name="theme-color" content="#992ef0">
+    <style>
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 96vh;
+        }
+
+        @media only screen and (max-width: 767px) {
+
+            /* styles for mobile devices */
+            .loading {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 85vh;
+            }
+
+        }
+
+        .spinner {
+            border: 5px solid #f7efef;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="loading">
+        <div id="spinner" class="spinner"></div>
+    </div>
+
+    <script>
+
+        var metaTags = document.getElementsByTagName("meta");
+        for (var i = 0; i < metaTags.length; i++) {
+            if (metaTags[i].getAttribute("name") == "theme-color") {
+                var contentValue = metaTags[i].getAttribute("content");
+                document.getElementById('spinner').style = 'border-top: 5.1px solid ' + contentValue + ';';
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
